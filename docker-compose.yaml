@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./data:/app/data
+
+    env_file:
+      - .env
+
+    depends_on:
+      - vllm
+
+  vllm:
+    image: vllm/vllm-openai:latest
+
+    command: --model Qwen/Qwen3-4B-Instruct
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+
+    ipc: host

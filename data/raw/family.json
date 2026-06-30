@@ -1,0 +1,22 @@
+{
+    "members": [
+        {
+            "name": "dad",
+            "age": 40,
+            "gender": "M",
+            "disease": [
+                "diabetes"
+            ],
+            "allergy": [
+                "shrimp"
+            ]
+        },
+        {
+            "name": "mom",
+            "age": 37,
+            "gender": "F",
+            "disease": [],
+            "allergy": []
+        }
+    ]
+}
